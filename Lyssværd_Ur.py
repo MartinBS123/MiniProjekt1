@@ -21,7 +21,7 @@ while True:
     screen.fill((0, 0, 0))
 
     #Billede lavet med ChatGPT
-    Deathstar = pygame.image.load("Bedre Deathstar png.jpeg")
+    Deathstar = pygame.image.load("Bedre_Deathstar.jpeg")
     #Størrelse af billede - tilpasset efter urets omkreds, fordi billed ikke er perfekt rund
     Deathstar = pygame.transform.scale(Deathstar, (445,435))
     #Placering af billede
