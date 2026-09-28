@@ -22,10 +22,11 @@ while True:
 
     #Billede lavet med ChatGPT
     Deathstar = pygame.image.load(r"MiniProjekt1\Bedre_Deathstar.jpeg")
-    #Størrelse af billede - tilpasset efter urets omkreds, fordi billed ikke er perfekt rund
-    Deathstar = pygame.transform.scale(Deathstar, (445,435))
-    #Placering af billede
-    screen.blit(Deathstar, (100, 100))
+    #Størrelse af billede - tilpasset efter urets omkreds, fordi billede ikke er perfekt rund
+    Deathstar = pygame.transform.scale(Deathstar, (455,435))
+    #Placering af billede - tilpasset efter urets omkreds, fordi billede ikke er perfekt rund
+    screen.blit(Deathstar, (96, 100))
+
 
 
     #Cirkel / omkredsen af ur
@@ -75,7 +76,7 @@ while True:
     Glidene_Bevægelse = time.time()
     Sekund_angle = (Glidene_Bevægelse % 60) * 6 - 90
     Minut_angle = (Glidene_Bevægelse / 60 % 60) * 6 - 90
-    Time_angle = (Glidene_Bevægelse / 3600 % 12)+2 * 30 - 90
+    Time_angle = (Glidene_Bevægelse / 3600 % 12) + 1 * 30 - 90
 
 
     #SekundViser - Rødt lyssværd
@@ -150,8 +151,4 @@ while True:
     end_position = (start_position[0]+end_offset[0], start_position[1]+end_offset[1])
     pygame.draw.line(screen, (140, 142, 145), start_position, end_position, 2)
 
-
     pygame.display.flip()
-
-
-
