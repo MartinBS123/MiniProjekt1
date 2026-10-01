@@ -69,14 +69,16 @@ while True:
         text_rect = text.get_rect(center=(x, y))
         screen.blit(text, text_rect)
 
-    #Kode for at kører uret i realtid
-    rn = time.localtime()
 
-    #Kode til at få viserne til at bevæge sig glidende i stedet for at hoppe fra sekund til sekund
-    Glidene_Bevægelse = time.time()
-    Sekund_angle = (Glidene_Bevægelse % 60) * 6 - 90
-    Minut_angle = (Glidene_Bevægelse / 60 % 60) * 6 - 90
-    Time_angle = (Glidene_Bevægelse / 3600 % 12) + 1 * 30 - 90
+    rn = time.gmtime()
+
+    sekunder = rn.tm_sec
+    minutter = rn.tm_min + sekunder / 60
+    timer = (rn.tm_hour % 12) + minutter / 60 + 2
+
+    Sekund_angle = sekunder * 6 - 90
+    Minut_angle = minutter * 6 - 90
+    Time_angle = timer * 30 - 90
 
 
     #SekundViser - Rødt lyssværd
